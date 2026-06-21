@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 256" width="800" height="256" role="img" aria-label="Shipvane">
+  <image href="logo.svg" x="0" y="0" width="256" height="256"/>
+  <text x="288" y="150"
+        font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif"
+        font-size="82" font-weight="700" letter-spacing="1">
+    <tspan fill="#0E2746">ship</tspan><tspan fill="#12A074">vane</tspan>
+  </text>
+  <text x="292" y="192"
+        font-family="Avenir Next, Helvetica Neue, Arial, sans-serif"
+        font-size="23" fill="#5B6B7A" letter-spacing="0.4">
+    Ship your code, just point the way.
+  </text>
+</svg>

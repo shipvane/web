@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shipvane"
+version = "0.0.1"
+description = "Ship your code, just point it the right direction. (Name reservation — Shipvane CLI coming soon.)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = ["ci", "pull-request", "automation", "agent", "devtools"]
+authors = [{ name = "Shipvane" }]
+
+[project.urls]
+Homepage = "https://shipvane.com"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shipvane"]

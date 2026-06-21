@@ -1,0 +1,24 @@
+{
+  "name": "shipvane",
+  "version": "0.0.1",
+  "description": "Ship your code, just point it the right direction. (Name reservation — Shipvane CLI coming soon.)",
+  "keywords": [
+    "ci",
+    "pull-request",
+    "code-review",
+    "automation",
+    "agent",
+    "devtools"
+  ],
+  "homepage": "https://shipvane.com",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shipvane/shipvane.git"
+  }
+}

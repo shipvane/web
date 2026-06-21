@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shipvane — Ship your code, just point the way</title>
+  <meta name="description" content="Shipvane turns a ticket into a merge-ready pull request. Nothing ships off-course: every change is driven by a real CI gate and your approval." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://shipvane.com/" />
+  <meta name="theme-color" content="#0E2746" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Shipvane" />
+  <meta property="og:url" content="https://shipvane.com/" />
+  <meta property="og:title" content="Shipvane — Ship your code, just point the way" />
+  <meta property="og:description" content="Shipvane turns a ticket into a merge-ready pull request. Nothing ships off-course: every change is driven by a real CI gate and your approval." />
+  <meta property="og:image" content="https://shipvane.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shipvane — ship your code, just point the way" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shipvane — Ship your code, just point the way" />
+  <meta name="twitter:description" content="Shipvane turns a ticket into a merge-ready pull request. Nothing ships off-course." />
+  <meta name="twitter:image" content="https://shipvane.com/og-image.png" />
+  <style>
+    :root{
+      --navy:#0E2746; --navy2:#0a1f3b; --blue:#2A5C9C; --blue-l:#3F86C8;
+      --green:#34D399; --green-d:#12A074; --ink:#0E2746; --muted:#5B6B7A;
+      --bg:#F6F9FC; --card:#FFFFFF; --line:#E4ECF4;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:12px;
+      padding:13px 22px;font-size:15px;transition:transform .08s ease,box-shadow .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .btn-green{background:linear-gradient(180deg,var(--green),var(--green-d));color:#04231a;
+      box-shadow:0 6px 18px rgba(18,160,116,.35)}
+    .btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
+    .btn-dark{background:var(--navy);color:#fff}
+
+    /* nav */
+    nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);
+      background:rgba(14,39,70,.82);border-bottom:1px solid rgba(255,255,255,.08)}
+    nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .brand{display:flex;align-items:center;gap:11px;color:#fff;font-weight:800;font-size:21px;letter-spacing:.3px}
+    .brand img{width:38px;height:38px}
+    .brand .v{color:var(--green)}
+    .nav-links{display:flex;align-items:center;gap:26px;color:#cfe0f2;font-size:15px;font-weight:600}
+    .nav-links a:hover{color:#fff}
+
+    /* hero */
+    .hero{background:radial-gradient(1200px 500px at 50% -120px,#1b4f8c 0%,var(--navy) 55%,var(--navy2) 100%);
+      color:#fff;text-align:center;padding:64px 0 96px;position:relative;overflow:hidden}
+    .hero img.emblem{width:148px;height:148px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.4));margin-bottom:26px}
+    .hero h1{font-size:54px;line-height:1.08;font-weight:800;letter-spacing:-1px;max-width:760px;margin:0 auto}
+    .hero h1 .g{background:linear-gradient(90deg,var(--green),#7af0c8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p.sub{margin:22px auto 34px;max-width:600px;font-size:19px;color:#bcd3ec}
+    .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .pill{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+      color:var(--green);background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);
+      padding:6px 14px;border-radius:999px;margin-bottom:24px}
+
+    /* sections */
+    section.block{padding:84px 0}
+    .eyebrow{color:var(--green-d);font-weight:800;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;text-align:center}
+    h2{font-size:38px;font-weight:800;letter-spacing:-.6px;text-align:center;margin:10px 0 14px}
+    .lead{color:var(--muted);font-size:18px;text-align:center;max-width:620px;margin:0 auto 52px}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;
+      box-shadow:0 1px 2px rgba(14,39,70,.04)}
+    .card.bad{border-color:#f3d6d6;background:#fff8f8}
+    .card h3{font-size:20px;margin-bottom:8px}
+    .card .tag{font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+    .card.bad .tag{color:#c0392b}
+    .card.good{border-color:#cdeede;background:#f5fefa}
+    .card.good .tag{color:var(--green-d)}
+    .card p{color:var(--muted);font-size:15.5px}
+
+    /* steps */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
+    .step .n{width:34px;height:34px;border-radius:10px;background:var(--navy);color:#fff;
+      display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
+    .step h4{font-size:16.5px;margin-bottom:6px}
+    .step p{color:var(--muted);font-size:14.5px}
+    .step.green .n{background:linear-gradient(180deg,var(--green),var(--green-d));color:#04231a}
+
+    /* contract band */
+    .band{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;
+      padding:54px 40px;text-align:center;max-width:920px;margin:0 auto}
+    .band h2{color:#fff}
+    .band p{color:#bcd3ec;max-width:560px;margin:6px auto 0;font-size:17px}
+    .band .row{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+    .band .row div{display:flex;align-items:center;gap:9px;font-weight:600;color:#dceaf8}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.2)}
+
+    /* waitlist */
+    .wait{text-align:center}
+    .wait form{display:flex;gap:10px;max-width:460px;margin:24px auto 0;flex-wrap:wrap;justify-content:center}
+    .wait input{flex:1;min-width:240px;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:15px}
+    .wait input:focus{outline:none;border-color:var(--blue-l)}
+
+    footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
+    footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+    footer .brand{color:var(--navy)}
+    @media(max-width:760px){
+      .hero h1{font-size:38px}.grid,.steps{grid-template-columns:1fr}.nav-links{display:none}
+      h2{font-size:30px}
+    }
+  </style>
+</head>
+<body>
+  <nav><div class="wrap">
+    <a class="brand" href="#"><img src="assets/logo.svg" alt=""/>ship<span class="v">vane</span></a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#why">Why Shipvane</a>
+      <a href="https://github.com/shipvane">GitHub</a>
+      <a class="btn btn-green" href="#waitlist" style="padding:9px 16px">Join waitlist</a>
+    </div>
+  </div></nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <img class="emblem" src="assets/logo.svg" alt="Shipvane"/>
+      <div class="pill">From ticket to merge-ready PR</div>
+      <h1>Ship your code,<br/><span class="g">just point the way.</span></h1>
+      <p class="sub">Shipvane turns a ticket into a merge-ready pull request — and nothing ships
+        off-course. Every change is driven by a <strong>real CI gate</strong> and <strong>your approval</strong>.</p>
+      <div class="cta">
+        <a class="btn btn-green" href="#waitlist">Join the waitlist →</a>
+        <a class="btn btn-ghost" href="https://github.com/shipvane">View on GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="block" id="why">
+    <div class="wrap">
+      <div class="eyebrow">The difference</div>
+      <h2>Blind AI codegen ships broken code.</h2>
+      <p class="lead">Most AI coding tools generate code they can never run. Shipvane works in a real
+        checkout and proves its work against your actual build.</p>
+      <div class="grid">
+        <div class="card bad">
+          <div class="tag">Without Shipvane</div>
+          <h3>Generated, not verified</h3>
+          <p>The model writes files it can't execute, guesses at your conventions, and hands you a PR
+            that may not even compile. You become the build server.</p>
+        </div>
+        <div class="card good">
+          <div class="tag">With Shipvane</div>
+          <h3>Implemented, then proven</h3>
+          <p>Shipvane edits a real branch, runs your real build &amp; tests, reads the actual errors, and
+            iterates until the gate is green. It isn't done until CI passes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="how" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="eyebrow">How it works</div>
+      <h2>Point it. It sails it in.</h2>
+      <p class="lead">You set the direction. Shipvane handles the voyage — and you hold the final say.</p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>Point at a ticket</h4><p>Hand Shipvane a Jira ticket. It reads the repo and plans the change.</p></div>
+        <div class="step"><div class="n">2</div><h4>It implements</h4><p>Edits a real branch in a fresh checkout, grounded in your conventions.</p></div>
+        <div class="step"><div class="n">3</div><h4>Real CI gate</h4><p>Runs your actual build &amp; tests, fixing failures until the gate is green.</p></div>
+        <div class="step green"><div class="n">✓</div><h4>Merge-ready PR</h4><p>A clean, passing pull request lands for your review. You approve; it merges.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="band">
+        <div class="eyebrow" style="color:var(--green)">The safety contract</div>
+        <h2>Nothing ships off-course.</h2>
+        <p>Shipvane is built on one promise: code only moves forward when it's earned the right to.</p>
+        <div class="row">
+          <div><span class="dot"></span> Green CI, every time</div>
+          <div><span class="dot"></span> Your approval to merge</div>
+          <div><span class="dot"></span> Ephemeral, per-ticket runs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wait" id="waitlist" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="eyebrow">Early access</div>
+      <h2>Be first aboard.</h2>
+      <p class="lead">Shipvane is in early development. Join the waitlist and we'll reach out when it's ready to sail.</p>
+      <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+        <button class="btn btn-dark" type="submit">Join the waitlist</button>
+        <p class="msg ok" style="display:none;width:100%;color:var(--green-d);font-weight:700;margin-top:8px">Thanks — you're on the list. ⚓</p>
+        <p class="msg err" style="display:none;width:100%;color:#c0392b;font-weight:700;margin-top:8px">Something went off-course. Email <a href="mailto:hello@shipvane.com" style="color:#c0392b;text-decoration:underline">hello@shipvane.com</a> and we'll add you.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer><div class="wrap">
+    <a class="brand" href="#"><img src="assets/logo.svg" alt="" style="width:30px;height:30px"/>ship<span class="v" style="color:var(--green-d)">vane</span></a>
+    <div>Ship your code, just point the way. · © 2026 Shipvane</div>
+  </div></footer>
+
+  <script>
+    // Waitlist: submit via fetch so the page never navigates away.
+    // Swap YOUR_FORM_ID in the form action for a real endpoint (Formspree free tier).
+    (function () {
+      var form = document.getElementById('waitlist-form');
+      if (!form) return;
+      var ok = form.querySelector('.ok');
+      var err = form.querySelector('.err');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        ok.style.display = err.style.display = 'none';
+        var btn = form.querySelector('button');
+        btn.disabled = true;
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) { form.reset(); ok.style.display = 'block'; }
+          else { err.style.display = 'block'; }
+        }).catch(function () {
+          err.style.display = 'block';
+        }).finally(function () {
+          btn.disabled = false;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

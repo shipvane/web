@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.1" r="1">
+      <stop offset="0" stop-color="#1b4f8c"/><stop offset="0.55" stop-color="#0E2746"/><stop offset="1" stop-color="#0a1f3b"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- emblem -->
+  <image href="assets/logo.svg" x="92" y="150" width="330" height="330"/>
+  <!-- text block -->
+  <g font-family="Avenir Next, Futura, Helvetica Neue, Arial, sans-serif">
+    <rect x="470" y="150" width="430" height="44" rx="22" fill="rgba(52,211,153,0.12)" stroke="#34D399" stroke-opacity="0.4"/>
+    <text x="494" y="179" font-size="20" font-weight="700" letter-spacing="2" fill="#34D399">FROM TICKET TO MERGE-READY PR</text>
+    <text x="470" y="290" font-size="104" font-weight="800" letter-spacing="1">
+      <tspan fill="#FFFFFF">ship</tspan><tspan fill="#34D399">vane</tspan>
+    </text>
+    <text x="474" y="360" font-size="40" font-weight="600" fill="#BCD3EC">Ship your code, just point the way.</text>
+    <text x="474" y="430" font-size="25" fill="#7FA8C8">Real CI gate. Your approval. Nothing ships off-course.</text>
+  </g>
+</svg>
