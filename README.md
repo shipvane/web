@@ -34,6 +34,11 @@ environment and hand back code they can't truly verify. Shipvane is the opposite
   into your own cloud. It runs the real checkout, build, and CI loop where your
   code already lives. *(In development.)*
 
+Engine speaks the **Model Context Protocol** and signs in over **OAuth**, so the
+Connect CLI is just one way in — you can also drive it straight from the AI
+assistant you already use. Working today in **Claude Desktop** and **Claude
+mobile**; ChatGPT and other MCP clients coming.
+
 ## Where to find it
 - **Web:** https://shipvane.com
 - **npm:** `npm i shipvane` *(reserved)*

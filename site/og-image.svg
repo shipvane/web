@@ -15,6 +15,6 @@
       <tspan fill="#FFFFFF">ship</tspan><tspan fill="#34D399">vane</tspan>
     </text>
     <text x="474" y="360" font-size="40" font-weight="600" fill="#BCD3EC">Ship your code, just point the way.</text>
-    <text x="474" y="430" font-size="25" fill="#7FA8C8">Turn a ticket into a merge-ready PR — proven by real CI.</text>
+    <text x="474" y="430" font-size="25" fill="#7FA8C8">Autonomous AI. Ticket to merge-ready PR, proven by real CI.</text>
   </g>
 </svg>
