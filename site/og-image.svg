@@ -14,7 +14,8 @@
     <text x="470" y="290" font-size="104" font-weight="800" letter-spacing="1">
       <tspan fill="#FFFFFF">ship</tspan><tspan fill="#34D399">vane</tspan>
     </text>
-    <text x="474" y="360" font-size="40" font-weight="600" fill="#BCD3EC">Ship your code, just point the way.</text>
-    <text x="474" y="430" font-size="25" fill="#7FA8C8">Autonomous AI. Ticket to merge-ready PR, proven by real CI.</text>
+    <text x="474" y="356" font-size="40" font-weight="600" fill="#BCD3EC">Ship your code, just point the way.</text>
+    <text x="474" y="422" font-size="26" fill="#7FA8C8">A full-stack <tspan fill="#34D399" font-weight="700">ADLC</tspan> — the Agentic Software</text>
+    <text x="474" y="460" font-size="26" fill="#7FA8C8">Development Life Cycle, run in your own cloud.</text>
   </g>
 </svg>
