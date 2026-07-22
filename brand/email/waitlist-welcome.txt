@@ -1,0 +1,29 @@
+Subject: You're aboard — welcome to the Shipvane waitlist ⚓
+
+You're on the list.
+
+Thanks for coming aboard. You'll be among the first to try Shipvane
+when it's ready to sail.
+
+What you signed up for:
+
+Shipvane is autonomous AI that takes a ticket all the way to a
+merge-ready pull request — planned, written, and proven against your
+real CI before a human ever looks. It runs on the cloud you own.
+
+Your code, your cloud, your call.
+
+What happens next:
+
+We'll email you the moment early access opens — nothing between now
+and then. If you want to jump the line, just reply and tell us your
+stack (repo host, CI, language); it helps us prioritize who we let in
+first.
+
+Ship your code, just point the way.
+
+— The Shipvane crew
+https://shipvane.com
+
+You're receiving this because you joined the waitlist at shipvane.com.
+Reply "off" and we'll take you off the list.

@@ -5,3 +5,7 @@ build/
 *.egg-info/
 __pycache__/
 *.pyc
+
+# Raw marketing capture assets — kept local. Some contain private-repo
+# internals (downstream PR screenshots) and this repo is PUBLIC.
+brand/social/captures/
